@@ -62,4 +62,13 @@ class FizzBuzzBangPopTest {
         assertEquals("BuzzPop", FizzBuzzBangPop.convert(54545));
     }
 
+    @Test
+    void convert_palindromeAndPrime_BangPop() {
+        assertEquals("BangPop", FizzBuzzBangPop.convert(11));
+        assertEquals("BangPop", FizzBuzzBangPop.convert(101));
+        assertEquals("BangPop", FizzBuzzBangPop.convert(181));
+        assertEquals("BangPop", FizzBuzzBangPop.convert(191));
+        assertEquals("BangPop", FizzBuzzBangPop.convert(151));
+    }
+
 }
