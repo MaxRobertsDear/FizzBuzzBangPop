@@ -3,7 +3,10 @@ package com.company;
 public class FizzBuzzBangPop {
 
     public static String convert(int input) {
-        if (FizzBuzzBangPop.checkPrime(input)) {
+        if (FizzBuzzBangPop.isPalindrome(input)) {
+            return "Pop";
+        }
+        else if (FizzBuzzBangPop.isPrime(input)) {
             return "Bang";
         }
         else if (input % 15 == 0) {
@@ -15,7 +18,7 @@ public class FizzBuzzBangPop {
         }
     }
 
-    private static boolean checkPrime(int n) {
+    private static boolean isPrime(int n) {
         int i, m = 0, flag = 0;
         m = n / 2;
         if (n == 0 || n == 1) {
@@ -31,6 +34,22 @@ public class FizzBuzzBangPop {
             }
             return true;
         }
+    }
+
+    private static boolean isPalindrome(int n) {
+        int r,sum=0,temp;
+//        int n=454;//It is the number variable to be checked for palindrome
+
+        temp=n;
+        while(n>0){
+            r=n%10;  //getting remainder
+            sum=(sum*10)+r;
+            n=n/10;
+        }
+        if(temp==sum)
+            return true;
+        else
+            return false;
     }
 
 }
