@@ -71,4 +71,12 @@ class FizzBuzzBangPopTest {
         assertEquals("BangPop", FizzBuzzBangPop.convert(151));
     }
 
+    @Test
+    void score() {
+        assertEquals(9, FizzBuzzBangPop.score(2));
+        assertEquals(13, FizzBuzzBangPop.score(3));
+        assertEquals(4, FizzBuzzBangPop.score(4));
+        assertEquals(3, FizzBuzzBangPop.score(11));
+    }
+
 }

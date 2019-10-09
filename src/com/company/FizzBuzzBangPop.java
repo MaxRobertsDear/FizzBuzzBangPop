@@ -4,29 +4,47 @@ public class FizzBuzzBangPop {
 
 
     public static String convert(int input) {
+
         if ((FizzBuzzBangPop.isPalindrome(input)) && (FizzBuzzBangPop.isPrime(input))) {
             return "BangPop";
-        }
-        else if ((FizzBuzzBangPop.isPalindrome(input)) && (input % 5 == 0)) {
+        } else if ((FizzBuzzBangPop.isPalindrome(input)) && (FizzBuzzBangPop.isDivisibleBy5(input))) {
             return "BuzzPop";
-        }
-        else if ((FizzBuzzBangPop.isPalindrome(input)) && (input % 3 == 0)) {
+        } else if ((FizzBuzzBangPop.isPalindrome(input)) && (FizzBuzzBangPop.isDivisibleBy3(input))) {
             return "FizzPop";
-        }
-        else if (FizzBuzzBangPop.isPalindrome(input)) {
+        } else if (FizzBuzzBangPop.isPalindrome(input)) {
             return "Pop";
-        }
-        else if (FizzBuzzBangPop.isPrime(input)) {
+        } else if (FizzBuzzBangPop.isPrime(input) && (FizzBuzzBangPop.isDivisibleBy3(input))) {
+            return "FizzBang";
+        } else if (FizzBuzzBangPop.isPrime(input)) {
             return "Bang";
-        }
-        else if (input % 15 == 0) {
+        } else if ((FizzBuzzBangPop.isDivisibleBy3(input)) && (FizzBuzzBangPop.isDivisibleBy5(input))) {
             return "FizzBuzz";
-        } else if (input % 5 == 0) {
+        } else if (FizzBuzzBangPop.isDivisibleBy5(input)) {
             return "Buzz";
-        } else {
+        } else if (FizzBuzzBangPop.isDivisibleBy3(input)) {
             return "Fizz";
+        } else {
+            return Integer.toString(input);
         }
     }
+
+
+    public static int score(int number) {
+        int finalScore = 0;
+
+        int lastDigit = number % 10;
+
+        finalScore += lastDigit;
+
+        String sound = FizzBuzzBangPop.convert(number);
+        if (sound.contains("Fizz")) finalScore += 3;
+        if (sound.contains("Buzz")) finalScore += 5;
+        if (sound.contains("Bang")) finalScore += 7;
+        if (sound.contains("Pop")) finalScore -= 5;
+
+        return finalScore;
+    }
+
 
     // lifted from online #WhyDoItIfAlreadyDoneBySomeoneElse
     private static boolean isPrime(int n) {
@@ -62,6 +80,16 @@ public class FizzBuzzBangPop {
             return true;
         else
             return false;
+    }
+
+    private static boolean isDivisibleBy3(int n) {
+        if (n % 3 == 0) return true;
+        else return false;
+    }
+
+    private static boolean isDivisibleBy5(int n) {
+        if (n % 5 == 0) return true;
+        else return false;
     }
 
 
