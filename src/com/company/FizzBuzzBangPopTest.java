@@ -16,5 +16,10 @@ class FizzBuzzBangPopTest {
         assertEquals("Buzz", FizzBuzzBangPop.convert(5));
     }
 
+    @Test
+    void convert_FizzBuzz() {
+        assertEquals("FizzBuzz", FizzBuzzBangPop.convert(15));
+    }
+
 
 }
