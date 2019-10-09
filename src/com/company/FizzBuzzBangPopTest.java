@@ -11,7 +11,6 @@ class FizzBuzzBangPopTest {
         assertEquals("Fizz", FizzBuzzBangPop.convert(27));
         assertEquals("Fizz", FizzBuzzBangPop.convert(6));
         assertEquals("Fizz", FizzBuzzBangPop.convert(9));
-        assertEquals("Fizz", FizzBuzzBangPop.convert(33));
         assertEquals("Fizz", FizzBuzzBangPop.convert(36));
     }
 
@@ -20,7 +19,6 @@ class FizzBuzzBangPopTest {
         assertEquals("Buzz", FizzBuzzBangPop.convert(500));
         assertEquals("Buzz", FizzBuzzBangPop.convert(10));
         assertEquals("Buzz", FizzBuzzBangPop.convert(50));
-        assertEquals("Buzz", FizzBuzzBangPop.convert(55));
         assertEquals("Buzz", FizzBuzzBangPop.convert(65));
     }
 
@@ -35,18 +33,13 @@ class FizzBuzzBangPopTest {
 
     @Test
     void convert_prime_Bang() {
-        assertEquals("Bang", FizzBuzzBangPop.convert(3));
         assertEquals("Bang", FizzBuzzBangPop.convert(17));
-        assertEquals("Bang", FizzBuzzBangPop.convert(101));
         assertEquals("Bang", FizzBuzzBangPop.convert(139));
-        assertEquals("Bang", FizzBuzzBangPop.convert(191));
     }
 
     @Test
     void convert_palindrome_Pop() {
         assertEquals("Pop", FizzBuzzBangPop.convert(44));
-        assertEquals("Pop", FizzBuzzBangPop.convert(55));
-        assertEquals("Pop", FizzBuzzBangPop.convert(66));
         assertEquals("Pop", FizzBuzzBangPop.convert(77));
         assertEquals("Pop", FizzBuzzBangPop.convert(8558));
     }
@@ -58,6 +51,15 @@ class FizzBuzzBangPopTest {
         assertEquals("FizzPop", FizzBuzzBangPop.convert(66));
         assertEquals("FizzPop", FizzBuzzBangPop.convert(666));
         assertEquals("FizzPop", FizzBuzzBangPop.convert(3663));
+    }
+
+    @Test
+    void convert_palindromeAndMultipleOf5_Pop() {
+        assertEquals("BuzzPop", FizzBuzzBangPop.convert(55));
+        assertEquals("BuzzPop", FizzBuzzBangPop.convert(555));
+        assertEquals("BuzzPop", FizzBuzzBangPop.convert(5555));
+        assertEquals("BuzzPop", FizzBuzzBangPop.convert(5005));
+        assertEquals("BuzzPop", FizzBuzzBangPop.convert(54545));
     }
 
 }

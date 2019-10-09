@@ -3,7 +3,10 @@ package com.company;
 public class FizzBuzzBangPop {
 
     public static String convert(int input) {
-        if ((FizzBuzzBangPop.isPalindrome(input)) && (input % 3 == 0)) {
+        if ((FizzBuzzBangPop.isPalindrome(input)) && (input % 5 == 0)) {
+            return "BuzzPop";
+        }
+        else if ((FizzBuzzBangPop.isPalindrome(input)) && (input % 3 == 0)) {
             return "FizzPop";
         }
         else if (FizzBuzzBangPop.isPalindrome(input)) {
@@ -42,14 +45,14 @@ public class FizzBuzzBangPop {
     private static boolean isPalindrome(int n) {
         int r,sum=0,temp;
 //        int n=454;//It is the number variable to be checked for palindrome
-
+        int input = n;
         temp=n;
         while(n>0){
             r=n%10;  //getting remainder
             sum=(sum*10)+r;
             n=n/10;
         }
-        if(temp==sum)
+        if(temp==sum && input > 10)
             return true;
         else
             return false;
