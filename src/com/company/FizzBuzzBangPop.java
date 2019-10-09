@@ -3,7 +3,10 @@ package com.company;
 public class FizzBuzzBangPop {
 
     public static String convert(int input) {
-        if (FizzBuzzBangPop.isPalindrome(input)) {
+        if ((FizzBuzzBangPop.isPalindrome(input)) && (input % 3 == 0)) {
+            return "FizzPop";
+        }
+        else if (FizzBuzzBangPop.isPalindrome(input)) {
             return "Pop";
         }
         else if (FizzBuzzBangPop.isPrime(input)) {
@@ -51,5 +54,6 @@ public class FizzBuzzBangPop {
         else
             return false;
     }
+
 
 }
