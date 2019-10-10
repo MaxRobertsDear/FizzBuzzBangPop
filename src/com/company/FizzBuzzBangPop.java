@@ -1,5 +1,9 @@
 package com.company;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+
 public class FizzBuzzBangPop {
 
 
@@ -46,9 +50,32 @@ public class FizzBuzzBangPop {
     }
 
 
+    public static String highScore(int listSize) {
+
+        HashMap<Integer, Integer> keyValues = new HashMap<>();
+        for (int i = 0; i < listSize; i++) {
+            int key = i;
+            int value = FizzBuzzBangPop.score(i);
+            keyValues.put(key, value);
+        }
+
+        int maxValue = Collections.max(keyValues.values());
+        HashMap<Integer, Integer> maxValueKeysMap = new HashMap<>();
+
+        // adds the keys correlating to the max value to the maxValueKeysMap
+        for (Map.Entry<Integer, Integer> entry : keyValues.entrySet()) {
+            if (entry.getValue() == maxValue) {
+                maxValueKeysMap.put(entry.getKey(), maxValue);
+            }
+        }
+
+        return ("key set: " + maxValueKeysMap.keySet().toString() + " has the highest value, which is: " + maxValue);
+    }
+
+
     // lifted from online #WhyDoItIfAlreadyDoneBySomeoneElse
     private static boolean isPrime(int n) {
-        int i, m = 0, flag = 0;
+        int i, m, flag = 0;
         m = n / 2;
         if (n == 0 || n == 1) {
             return false;
@@ -68,7 +95,6 @@ public class FizzBuzzBangPop {
     // lifted from online: #WhyDoItIfAlreadyDoneBySomeoneElse
     private static boolean isPalindrome(int n) {
         int r, sum = 0, temp;
-//        int n=454;//It is the number variable to be checked for palindrome
         int input = n;
         temp = n;
         while (n > 0) {

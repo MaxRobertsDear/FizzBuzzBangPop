@@ -79,4 +79,13 @@ class FizzBuzzBangPopTest {
         assertEquals(3, FizzBuzzBangPop.score(11));
     }
 
+    @Test
+    void highScore() {
+        assertEquals("key set: [19, 89, 59, 29, 79] has the highest value, which is: 16", FizzBuzzBangPop.highScore(100));
+        assertEquals("key set: [19, 29] has the highest value, which is: 16", FizzBuzzBangPop.highScore(50));
+        assertEquals("key set: [19, 59, 29] has the highest value, which is: 16", FizzBuzzBangPop.highScore(70));
+    }
+
+
+
 }
